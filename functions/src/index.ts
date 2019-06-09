@@ -21,3 +21,12 @@ export const notify = functions.https.onRequest((request, response) => {
     const bot = new telegraf.Telegram('774481227:AAFz6YCHq2_91DOYpQ7gQZoY13Ja0mjwk4U')
     return bot.sendMessage('-359171100', `📁${repositoryName}\n👨${name} | ${email}👨\nсделал пуш в 🌵${branch}🌵\n${msgCommits}`)
 });
+
+export const cardStackViewUpdated = functions.https.onRequest((req, resp) => {
+    if(req.body.action == "opened") {
+        const bot = new telegraf.Telegram('774481227:AAFz6YCHq2_91DOYpQ7gQZoY13Ja0mjwk4U')
+        return bot.sendMessage('-359171100', `CardStackView new release!🔥🔥🔥`)
+    } else {
+        return
+    }
+})
